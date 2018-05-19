@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+<title>JS good parts.</title>
+<style>
+.spinner:before{
+    content: "";
+    height:60px;
+    width:60px;
+    box-sizing: border-box;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top:30px;
+    margin-left: 30px;
+    border:3px solid lightgrey;
+    border-top-color: coral;
+    border-radius: 100%;
+    animation: spinner 0.7s ease-in-out infinite;
+}
+@keyframes spinner {
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+    <div class="main">
+        <h1>Spinners and Loaders</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque veritatis nesciunt natus laboriosam, inventore reprehenderit odit quam illum quis vero minus, impedit cumque fugiat officia dicta ipsam esse aperiam? Officiis laudantium voluptate eaque nobis expedita ea nulla voluptatem atque quisquam quis mollitia explicabo deleniti iure numquam, nemo iusto a hic.</p>
+        <iframe width="1300" height="480" src="https://www.youtube.com/embed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
+    </div>
+    <script>      
+            var main = document.querySelector('.main');       
+            var para = document.querySelector('.main iframe'); 
+            main.classList.add('spinner');       
+            para.style.display = 'none';
+            setTimeout(() =>{
+                main.classList.remove('spinner');       
+                 para.style.display = 'block';
+            },4000);
+    </script>
+</body>
+
+</html>
